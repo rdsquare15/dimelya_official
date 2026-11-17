@@ -1,0 +1,694 @@
+/* ============================================================
+   DIMELYA — единая таблица стилей сайта
+   Тёмная неоново-фиолетовая тема для рэп-сцены
+   ============================================================ */
+
+/* ---------- Дизайн-токены: поменяйте здесь — изменится весь сайт ---------- */
+:root {
+    --bg: #14121f;            /* фон страниц */
+    --bg-card: #1e1b2e;       /* фон карточек */
+    --accent: #8b5cf6;        /* основной акцент (фиолетовый неон) */
+    --accent-hover: #a78bfa;  /* акцент при наведении */
+    --accent-glow: rgba(139, 92, 246, 0.4); /* свечение для теней */
+    --text: #f4f4f6;          /* основной текст */
+    --text-muted: #b8b6c4;    /* второстепенный текст */
+    --border: rgba(255, 255, 255, 0.12);
+    --radius: 14px;           /* скругление углов */
+    --font-display: 'Unbounded', sans-serif; /* шрифт заголовков */
+    --font-body: 'Inter', sans-serif;        /* шрифт текста */
+}
+
+/* ---------- Базовый сброс и фон ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    /* Лёгкое радиальное свечение сверху для глубины фона */
+    background-image: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15), transparent 60%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* ---------- Шапка ---------- */
+.site-header {
+    display: flex;               /* логотип слева, меню справа */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo:hover {
+    color: var(--accent-hover);
+}
+
+.site-nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-hover);
+}
+
+/* ---------- Контейнер страниц ---------- */
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    text-align: center;
+}
+
+/* ---------- Заголовки и тексты ---------- */
+.page-title {
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-tagline {
+    font-size: 20px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+/* ---------- Хиро-блок главной ---------- */
+.hero {
+    padding: 60px 0 50px;
+}
+
+.hero-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-hover);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 76px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    /* Неоновое свечение вокруг имени */
+    text-shadow: 0 0 40px var(--accent-glow);
+    margin-bottom: 16px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap; /* кнопки переносятся на узких экранах */
+    margin-bottom: 28px;
+}
+
+.hero-stats {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* ---------- Кнопки (CTA) ---------- */
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* Второй вариант кнопки — прозрачная с обводкой */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+}
+
+.btn-outline:hover {
+    background: rgba(139, 92, 246, 0.15);
+    box-shadow: none;
+}
+
+/* ---------- Карточки треков на главной ---------- */
+.tracks {
+    margin-top: 40px;
+}
+
+.track-card {
+    display: flex;               /* название слева, стрелка справа */
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 560px;
+    margin: 0 auto 16px;
+    padding: 22px 26px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    text-align: left;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.track-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.track-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.track-meta {
+    flex: 1;               /* мета-данные занимают середину */
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.track-arrow {
+    color: var(--accent-hover);
+    font-size: 22px;
+    transition: transform 0.25s ease;
+}
+
+.track-card:hover .track-arrow {
+    transform: translateX(6px); /* стрелка «убегает» при наведении */
+}
+
+/* ---------- Карточка концерта ---------- */
+.event-card,
+.highlight-card {
+    max-width: 480px;
+    margin: 0 auto 28px;
+    padding: 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover,
+.highlight-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.event-label,
+.highlight-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-hover);
+    margin-bottom: 10px;
+}
+
+.event-title,
+.highlight-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.event-desc,
+.highlight-desc {
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.event-price {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ---------- Страница трека ---------- */
+.track-page-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-hover);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.track-page-desc {
+    max-width: 480px;
+    margin: 0 auto 32px;
+    color: var(--text-muted);
+}
+
+.track-nav {
+    margin-top: 48px;
+}
+
+.track-nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.track-nav-link:hover {
+    color: var(--accent-hover);
+}
+
+/* ---------- Подвал ---------- */
+.site-footer {
+    text-align: center;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ---------- Адаптив: телефоны ---------- */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 44px;  /* уменьшаем крупное имя */
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+
+    .site-header {
+        flex-direction: column; /* логотип и меню в столбик */
+        gap: 12px;
+    }
+
+    .track-card {
+        flex-direction: column; /* карточки треков — вертикально */
+        text-align: center;
+        gap: 6px;
+    }
+
+    .track-meta {
+        text-align: center;
+    }
+}
+
+.about-facts {
+    max-width: 500px;
+    margin: 60px auto 0;
+}
+
+.fact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.fact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.fact-item:last-child {
+    border-bottom: none;
+}
+
+.fact-label {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.fact-value {
+    font-weight: 600;
+    color: var(--text);
+}
+/* ---------- Секция «Я в соцсетях» ---------- */
+.socials-section {
+    max-width: 520px;
+    margin: 60px auto 0;
+}
+
+.socials-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+/* Сетка карточек соцсетей: 2 колонки, на телефоне — 1 */
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.social-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.social-handle {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* ---------- Примечание про бесплатный вход для друзей ---------- */
+.event-free-note {
+    color: var(--accent-hover);
+    font-size: 15px;
+    margin: -8px 0 20px;
+}
+
+/* ---------- Адаптив: соцсети в одну колонку ---------- */
+@media (max-width: 640px) {
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================================================
+   Расширенная страница «Обо мне»
+   ============================================================ */
+
+/* Плавное появление секций при загрузке */
+.fade-in {
+    animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Градиентный заголовок */
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover), #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Манифест-цитата */
+.manifesto {
+    max-width: 460px;
+    margin: 36px auto 0;
+    padding: 20px 28px;
+    border-left: 3px solid var(--accent);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--text);
+    text-align: left;
+    background: var(--card-bg, rgba(255, 255, 255, 0.04));
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* Универсальная карточка-секция (как у career-section) */
+.career-section,
+.beyond-section,
+.socials-section {
+    max-width: 640px;
+    margin: 60px auto 0;
+    padding: 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.career-content,
+.beyond-section,
+.socials-section {
+    text-align: left;
+}
+
+/* Декоративный разделитель между секциями */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* Секция «За пределами музыки»: сетка из трёх карточек */
+.beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.beyond-item {
+    padding: 20px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.beyond-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.beyond-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.beyond-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.beyond-text {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Соцсети */
+.socials-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.social-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.social-handle {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Примечание про бесплатный вход для друзей */
+.event-free-note {
+    color: var(--accent-hover);
+    font-size: 15px;
+    margin: -8px 0 20px;
+}
+
+/* Адаптив */
+@media (max-width: 640px) {
+    .social-links,
+    .beyond-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manifesto {
+        font-size: 16px;
+    }
+}
+/* ============================================================
+   Главная страница: стили
+   ============================================================ */
+
+/* Полоса цифр */
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 24px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-hover);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Тизер биографии */
+.about-teaser {
+    max-width: 640px;
+    margin: 60px auto 0;
+    padding: 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.about-teaser-text {
+    color: var(--text-muted);
+    text-align: left;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* Секция концертов на главной */
+.concerts-preview {
+    max-width: 720px;
+    margin: 60px auto 0;
+}
+
+.concerts-all-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--accent-hover);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.concerts-all-link:hover {
+    color: var(--text);
+}
+
+/* Адаптив */
+@media (max-width: 640px) {
+    .stats-row {
+        flex-direction: column;
+    }
+}

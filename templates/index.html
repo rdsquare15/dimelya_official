@@ -1,0 +1,77 @@
+<!-- Главная страница — обновлённый вид -->
+{% extends "post_base.html" %}
+
+{% block title %}Dimelya — официальный сайт{% endblock %}
+
+{% block content %}
+
+    <!-- ===== Хиро-блок: первое впечатление ===== -->
+    <section class="hero fade-in">
+        <p class="hero-eyebrow">Рэп-исполнитель · Москва</p>
+        <h1 class="hero-title gradient-text">DIMELYA</h1>
+        <p class="hero-subtitle">
+            Настоящее имя — Емельянов Дмитрий. Пишу честно: о жизни, о падениях
+            и о том, что авторитет можно обратить в прах — и снова собрать себя.
+        </p>
+
+        <!-- Манифест-цитата: настроение артиста -->
+        <blockquote class="manifesto">
+            «Я не пою про то, чего не пережил.
+            Каждая строка — это выжженная правда».
+        </blockquote>
+
+        <!-- Главные призывы к действию -->
+        <div class="hero-actions">
+            <a href="/concerts" class="btn">Концерты</a>
+            <a href="/blog/1" class="btn btn-outline">Слушать хит</a>
+            <a href="/about" class="btn btn-outline">Обо мне</a>
+        </div>
+    </section>
+
+    <!-- ===== Полоса цифр: быстрые достижения ===== -->
+    <section class="stats-row fade-in">
+        <div class="stat-card">
+            <span class="stat-number">200 000+</span>
+            <span class="stat-label">прослушиваний главного хита</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">8.10.2026</span>
+            <span class="stat-label">день первого релиза</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">1000 ₽</span>
+            <span class="stat-label">билет на концерт · друзьям — бесплатно</span>
+        </div>
+    </section>
+
+    <!-- ===== Секция с треками ===== -->
+    <section class="tracks fade-in">
+        <h2 class="section-title">Треки</h2>
+
+        <a href="/blog/1" class="track-card">
+            <span class="track-name">Авторитет в прах</span>
+            <span class="track-meta">Сингл · 200 000+ прослушиваний на VK Музыке</span>
+            <span class="track-arrow">→</span>
+        </a>
+
+        <a href="/blog/2" class="track-card">
+            <span class="track-name">Вторая песня</span>
+            <span class="track-meta">Новый релиз · уже на площадках</span>
+            <span class="track-arrow">→</span>
+        </a>
+    </section>
+
+
+    <!-- ===== Тизер биографии ===== -->
+    <section class="about-teaser fade-in">
+        <h2 class="section-title">Кто такой Dimelya</h2>
+        <p class="about-teaser-text">
+            Домашние записи ночью, дешёвый микрофон и полное отсутствие глянца.
+            Псевдоним собран из моего имени — Дмитрий Емельянов,
+            а на самых тёмных треках я выступаю под ником <strong>Демония</strong>.
+            Начал выкладывать песни 8 октября 2026 — и с тех пор не останавливаюсь.
+        </p>
+        <a href="/about" class="btn btn-outline">Читать полную историю</a>
+    </section>
+
+{% endblock %}

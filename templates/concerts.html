@@ -1,0 +1,76 @@
+<!-- Отдельная страница «Концерты»: полная афиша -->
+{% extends "post_base.html" %}
+
+{% block title %}Концерты — Dimelya{% endblock %}
+
+{% block content %}
+
+    <h1 class="page-title">Концерты</h1>
+    <p class="about-tagline">
+        Живой звук и драйв. Приходи — будет громко.
+        Друзьям и знакомым — вход бесплатный, просто напиши мне в личку.
+    </p>
+
+    <!-- ===== Секция «Ближайшие выступления» ===== -->
+    <section class="gigs-section fade-in">
+        <h2 class="section-title">Ближайшие выступления</h2>
+
+        <!-- ЗАМЕНИТЕ ссылку на реальный адрес покупки билетов -->
+        <div class="gig-card">
+            <div class="gig-date">
+                <span class="gig-day">—</span>
+                <span class="gig-month">дата скоро</span>
+            </div>
+            <div class="gig-info">
+                <h3 class="gig-city">Следующий концерт</h3>
+                <p class="gig-venue">Город и площадка — уточняются</p>
+            </div>
+            <div class="gig-action">
+                <p class="gig-price">Билет — 1000 ₽</p>
+                <a href="" class="btn btn-glow" target="_blank" rel="noopener noreferrer">
+                    Купить билет
+                </a>
+            </div>
+        </div>
+
+        <p class="gigs-empty-note">
+            Новые даты появляются здесь первыми. Следи за обновлениями!
+        </p>
+    </section>
+
+    <!-- ===== Секция «Прошедшие концерты» ===== -->
+    <section class="gigs-section fade-in">
+        <h2 class="section-title">Прошедшие концерты</h2>
+
+        <div class="gig-card gig-card-past">
+            <div class="gig-date">
+                <span class="gig-day">30</span>
+                <span class="gig-month">августа</span>
+            </div>
+            <div class="gig-info">
+                <h3 class="gig-city">Концерт Dimelya</h3>
+                <p class="gig-venue">Первое большое выступление</p>
+            </div>
+            <div class="gig-action">
+                <span class="gig-status">Состоялся</span>
+            </div>
+        </div>
+
+        <!-- Шаблон для нового прошедшего концерта:
+        <div class="gig-card gig-card-past">
+            <div class="gig-date">
+                <span class="gig-day">15</span>
+                <span class="gig-month">декабря</span>
+            </div>
+            <div class="gig-info">
+                <h3 class="gig-city">Название концерта</h3>
+                <p class="gig-venue">Город, площадка</p>
+            </div>
+            <div class="gig-action">
+                <span class="gig-status">Состоялся</span>
+            </div>
+        </div>
+        -->
+    </section>
+
+{% endblock %}

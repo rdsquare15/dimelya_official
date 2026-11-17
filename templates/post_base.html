@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Базовый шаблон: каркас, который наследуют все остальные страницы -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Корректное масштабирование на телефонах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Подключаем шрифты Google Fonts: Unbounded для заголовков,
+         Inter для основного текста -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Единая таблица стилей для ВСЕХ страниц сайта.
+         Раньше посты её не подключали — поэтому выглядели белым листом -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Каждый дочерний шаблон может подставить свой заголовок вкладки -->
+    <title>{% block title %}Dimelya{% endblock %}</title>
+</head>
+<body>
+
+    <!-- Шапка сайта: логотип-имя и навигация -->
+    <header class="site-header">
+        <a href="/" class="logo">DIMELYA</a>
+        <nav class="site-nav">
+            <a href="/" class="nav-link">Главная</a>
+            <a href="/about" class="nav-link">Обо мне</a>
+        </nav>
+    </header>
+
+    <!-- Основной блок: сюда дочерние шаблоны вставляют содержимое -->
+    <main class="page">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Подвал: повторяется на каждой странице -->
+    <footer class="site-footer">
+        <p>© 2026 Dimelya. Слушай, приходи, качай.</p>
+    </footer>
+
+</body>
+</html>
